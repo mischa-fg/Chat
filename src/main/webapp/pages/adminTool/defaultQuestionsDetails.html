@@ -1,0 +1,31 @@
+<div id="defaultQuestionsContent">
+    <h1>Fragenvorschlag bearbeiten</h1>
+
+  <div class="lds-roller" id="contentLoaderAnimation">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <form id="defaultQuestionForm">
+    <label class="hidden" for="defaultQuestion">Standard Frage</label>
+    <div class="input-group">
+      <span class="input-group-text">Standard Frage</span>
+      <input class="form-control" id="defaultQuestion" name="dQuestion" onkeydown="return event.key !== 'Enter';" onkeyup=checkInput();
+             placeholder="Standard Frage" type="text">
+    </div>
+    <div class="mb-3">
+      <small class="form-text text-muted">0 Zeichen übrig</small>
+    </div>
+
+    <button class="btn btn-secondary w-100" id="dQuestionFormSubmitButton" type="button"></button>
+  </form>
+</div>
+<script src="../../assets/js/adminTools/defaultQuestionsDetailsPage.js"></script>
+<script>
+    loadDefaultQuestion();
+</script>

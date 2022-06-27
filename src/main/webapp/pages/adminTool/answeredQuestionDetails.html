@@ -1,0 +1,29 @@
+<div id="answeredQuestionsDetailsContent">
+
+  <h1>Beantwortete Frage bearbeiten</h1>
+
+  <form action="#" id="answeredQuestionDetailsForm">
+    <div class="form-group">
+      <label class="hidden" for="answeredQuestionInput">Beantwortete Frage</label>
+      <div class="input-group">
+        <span class="input-group-text">Titel</span>
+        <input class="form-control" id="answeredQuestionInput" name="aQuestion" placeholder="Frage" type="text">
+      </div>
+      <div class="mb-3">
+        <small class="form-text text-muted">0 Zeichen übrig</small>
+      </div>
+
+      <input class="form-control btn btn-secondary mb-3" id="answeredQuestionFormSubmit" onclick="updateAnsweredQuestion()"
+             type="button" value="Aktualisieren">
+    </div>
+  </form>
+
+  <div id="loaderAnimationContainer"></div>
+
+  <h2>Gelieferte Antworten</h2>
+  <div id="allAnswersContainer"></div>
+</div>
+<script src="../../assets/js/adminTools/answeredQuestionDetailsPage.js"></script>
+<script>
+    loadAnsweredQuestionDetailsPage("loaderAnimationContainer");
+</script>

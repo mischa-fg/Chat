@@ -1,0 +1,64 @@
+@use "utilities/_ubscolors";
+@use "utilities/_variables";
+
+body{
+    background-color: ubscolors.$stone;
+    font-family: variables.$roboto;
+}
+label {
+    margin-right: 1.5px;
+    float: left;
+    width: 300px;
+    padding-top: 1px;
+    text-align: left;
+}
+input {
+    display: block;
+    margin-bottom: 1px;
+    border: 1px solid #000;
+    padding: 0.1em;
+    width: 300px;
+}
+.contentBackground{
+    background-color: ubscolors.$white;
+    width: 620px;
+    height: 626px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.content{
+    background-color: ubscolors.$white;
+    width: 440px;
+    height: 446px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+button{
+    height: 30px;
+    width: 130px;
+    background-color: ubscolors.$black;
+    border: none;
+    color: ubscolors.$white;
+    float: right;
+    width: 40%;
+    margin-top: 5px;
+}
+
+#showpassword{
+    float: left;
+    width: 10px;
+    width: 10%;
+}
+#passwordtext{
+    font-size: 8px;
+    float:left;
+    width: 40%;
+    margin-top: 3px;
+}
+#showPasswordContainer{
+    width: 300px;
+}

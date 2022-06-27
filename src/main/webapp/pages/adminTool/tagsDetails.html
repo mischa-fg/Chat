@@ -1,0 +1,39 @@
+<div id="tagsDetailsContent">
+    <h1>Tag bearbeiten</h1>
+  <p id="errorTag"></p>
+  <!--  <form id="tagUpdateForm">-->
+  <div>
+    <div class="input-group mb-3">
+      <span class="input-group-text">Tag</span>
+      <input autofocus class="form-control" id="tagName" name="tagName" placeholder="Tag" type="text">
+    </div>
+    <div class="mb-3">
+      <small class="form-text text-muted">0 characters remaining</small>
+    </div>
+
+    <div class="row">
+      <div class="input-group" id="input-group">
+      </div>
+    </div>
+  </div>
+  <!--    </form>-->
+
+  <div id="tagDetailsDetails"></div>
+
+  <div class="lds-roller" id="contentLoaderAnimation">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div id="allAnswersContainer"></div>
+</div>
+<script src="../../assets/js/adminTools/tagsDetailsPage.js"></script>
+<script>
+    loadTag();
+</script>

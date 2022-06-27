@@ -1,0 +1,40 @@
+<div id="userDetailsContent">
+    <h1>Benutzer Details!</h1>
+    <div>
+        <form id="editData">
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="userName">User</label>
+                <input type="text" id="userName" class="form-control" name="userName" placeholder="User" autofocus>
+            </div>
+
+            <div class="input-group mb-3">
+            <label class="input-group-text" for="canCreateUserInput">Kann neue Benutzer erstellen</label>
+            <input class="form-check-input" id="canCreateUserInput" type="checkbox">
+            </div>
+
+            <input type="button" id="userFormSubmitButton" value="Aktualisieren">
+            <input type="button" id="resetPassword" value="Passwort zurücksetzen">
+            <div id="newPasswordData"></div>
+        </form>
+    </div>
+    <!--    </form>-->
+
+    <div id="userDetailsDetails"></div>
+
+    <div id="contentLoaderAnimation" class="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div id="allUsersContainer"></div>
+</div>
+<script src="../../assets/js/adminTools/userDetailsPage.js"></script>
+<script>
+    loadUser();
+</script>

@@ -1,0 +1,53 @@
+@use "_ubscolors";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); // Roboto Font
+
+$roboto: 'Roboto', sans-serif;
+
+@mixin file-attachment() {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: calc(100% - 50px);
+  margin-left: 50px;
+}
+
+@mixin message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: slideIn 1s ease-in-out;
+  position: fixed;
+  width: calc(100% - 100px);
+  height: 100px;
+  right: 0;
+  bottom: 0;
+
+  .image {
+    width: 50px;
+    aspect-ratio: 1 / 1;
+    margin-right: 2em;
+  }
+
+  .message {
+    margin: 0;
+  }
+}
+
+@mixin subnav-element {
+  cursor: pointer;
+  margin: 10px;
+  background: ubscolors.$carbon;
+  border: 2px ubscolors.$black solid;
+  border-radius: 0.5em;
+  color: white;
+  padding: 0.5em;
+
+  &:hover {
+    background-color: ubscolors.$smoke;
+  }
+
+  &.active {
+    background-color: ubscolors.$stone;
+    color: ubscolors.$black;
+  }
+}

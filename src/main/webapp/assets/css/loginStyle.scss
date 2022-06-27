@@ -1,0 +1,79 @@
+@use "utilities/_ubscolors";
+
+body{
+    background-color: ubscolors.$stone !important;
+}
+
+.contentBackground{
+    background-color: ubscolors.$white;
+    width: 620px;
+    height: 626px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.content{
+    background-color: white;
+    width: 440px;
+    height: 446px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1{
+    margin-top: 60px !important;
+}
+
+.content p{
+    font-size: 12px;
+    margin-top: 20px;
+    margin-bottom: 16px;
+}
+
+#email, #password{
+    width: 440px;
+    height: 50px;
+    border:1px solid ubscolors.$black;
+    background-color: white;
+}
+
+#email{
+    margin-top: 40px;
+    border-radius: 0 !important;
+}
+
+#password{
+    margin-top: 10px;
+    border-radius: 0 !important;
+}
+
+#login{
+    height: 45px;
+    width: 100px;
+    background-color: ubscolors.$black;
+    border: none;
+    color: ubscolors.$white;
+    margin-top: 100px;
+    display: block;
+}
+
+#showpassword{
+    margin-top: 0 !important;
+    float: left;
+    width: 110px;
+    height: 30px;
+    font-size: 10px;
+    color: black;
+    background-color: white;
+    border: 1px solid ubscolors.$black;
+}
+
+#errorField{
+    color: ubscolors.$ubsred;
+    margin-bottom: 6px !important;
+    margin-top: 0;
+}

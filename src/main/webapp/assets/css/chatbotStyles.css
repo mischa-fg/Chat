@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+body * h1 {
+  margin: 0 0 0 0.25em;
+  /* NOTE: Keep a distance to image*/
+}
+body * .hidden {
+  display: none !important;
+}
+body main {
+  /* NOTE: The div where all the messages will go */
+}
+body main #chatbotHeader {
+  /* NOTE: The Title of the bot */
+}
+body main #chatbotHeader .botProfileImage {
+  border-radius: 50%;
+  float: left;
+}
+body main #chatbotHeader #botName {
+  padding-top: 5px;
+}
+body main #downloadButtonDiv {
+  text-align: right;
+}
+body main #downloadButtonDiv * {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+}
+body main #chatbotArea {
+  height: 65vh;
+  overflow: auto;
+  /* NOTE: As soon as needed, show a scrollbar */
+  overflow-x: hidden;
+  border: 1px solid;
+  margin-top: 10px;
+}
+body main #chatbotArea #message-area #firstMessageContainer {
+  float: left;
+}
+body main #chatbotArea #message-area [id^=messageBox-] {
+  /* NOTE: Feedback icons */
+  /* feed back icons overall */
+}
+body main #chatbotArea #message-area [id^=messageBox-] .feedbackImage {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+body main #chatbotArea #message-area [id^=messageBox-] .attachment-image {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: calc(100% - 50px);
+  margin-left: 50px;
+}
+body main #chatbotArea #message-area [id^=messageBox-] .attachment-container {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: calc(100% - 50px);
+  margin-left: 50px;
+  background: #BEBEBE;
+}
+body main #chatbotArea #message-area [id^=messageBox-] .attachment-container p {
+  margin: 0.25em;
+}
+body main #chatbotArea #message-area [id^=messageBox-] .attachment-container embed {
+  width: calc(100% - 1em);
+  margin: 0.5em;
+  height: 50vh;
+}
+body main #chatbotArea #message-area .messageContainer {
+  border: 1px solid;
+  /* NOTE: add a small and thin border */
+  padding: 10px;
+  min-height: 50px;
+  vertical-align: middle;
+  /* NOTE: Our messages */
+}
+body main #chatbotArea #message-area .messageContainer.incoming {
+  text-align: left;
+  background-color: #A36650;
+  color: #ffffff;
+}
+body main #chatbotArea #message-area .messageContainer.incoming.firstMessage {
+  margin: 5px 0 0 50px;
+  /* NOTE: Round Corners */
+  border-radius: 0 10px 10px 10px;
+  /* top left corner normal corner */
+}
+body main #chatbotArea #message-area .messageContainer.incoming.firstMessage.chatbotPBMessage {
+  width: 30px;
+  height: 30px;
+  mix-blend-mode: multiply;
+  /* this is needed because the image isn't transparent. TODO: remove once we have a transparent image! */
+  margin-right: 10px;
+}
+body main #chatbotArea #message-area .messageContainer.incoming.notFirstMessage {
+  margin: 0 0 0 50px;
+  /* Distance to the left */
+  /* NOTE: Round Corners */
+  border-radius: 10px 10px 10px 10px;
+}
+body main #chatbotArea #message-area .messageContainer.outgoing {
+  text-align: right;
+  background-color: #B89D83;
+  color: white;
+}
+body main #chatbotArea #message-area .messageContainer.outgoing.firstMessage {
+  margin: 5px 5px 0 0;
+  /* NOTE: Round Corners */
+  border-radius: 10px 0 10px 10px;
+  /* top right corner normal corner */
+}
+body main #chatbotArea #message-area .messageContainer.outgoing.notFirstMessage {
+  margin: 0 10px 0 0;
+  /* Distance to the right */
+  /* NOTE: Round Corners */
+  border-radius: 10px 10px 10px 10px;
+}
+body main #chatbotArea #message-area .messageContainer.outgoing .questionbutton {
+  background-color: #B89D83;
+  padding: 5px;
+  margin: 1px;
+  border: 1.5px solid white;
+  border-radius: 15px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  white-space: normal;
+}
+body main #inputWrapper {
+  /* NOTE: The text input and send button */
+}
+body main #inputWrapper #bottom {
+  display: flex;
+  /*NOTE: Keep the user Input and button in the same line */
+}
+body main #inputWrapper #bottom #userMessageInput {
+  margin: 5px 0 0 0;
+  /* NOTE: Keep a distance to the top */
+  border-radius: 20px 20px 20px 20px;
+}
+body main #inputWrapper #bottom #sendMessageButton {
+  margin: 5px 0 0 -50px;
+  border-color: inherit;
+  height: 40px;
+  transform: rotate(30deg);
+}
+
+a {
+  color: white;
+}
+a:hover {
+  color: #BBB3AC;
+}
+
+/* CSS Transitions */
+/* Grow */
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/* Hover effect */
+.feedbackImage:hover {
+  /*width: 35px;
+  height: 35px;*/
+}
+
+.prevFeedback * {
+  cursor: default !important;
+}
+
+#feedBackContainer, .prevFeedback {
+  margin-left: 50px;
+}
+
+#suggestionTable {
+  width: 80%;
+}
+
+/*# sourceMappingURL=chatbotStyles.css.map */

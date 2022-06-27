@@ -1,0 +1,87 @@
+<div class="sidenav" id="mySidenav">
+  <ul id="mySidenavUL">
+    <li class="sidenavButton" id="homeButton" onclick="loadPage('overview.html',this.id)">
+      <div class="nav-container">
+            <span>
+                <img alt="home icon" class="sidenavIcon" src="../../assets/images/home.svg">
+            </span>
+        <p class="nav-tooltip">Home</p>
+      </div>
+    </li>
+    <li class="sidenavButton" id="answersButton" onclick="loadPage('answers.html',this.id)">
+      <div class="nav-container">
+            <span>
+                <img alt="question and answer icon" class="sidenavIcon" src="../../assets/images/questionAnswer.svg">
+            </span>
+        <p class="nav-tooltip">Antworten</p>
+      </div>
+    </li>
+    <li class="sidenavButton" id="tagButton" onclick="loadPage('tags.html',this.id)">
+      <div class="nav-container">
+        <span>
+                <img alt="tag icon" class="sidenavIcon" src="../../assets/images/tag.svg">
+            </span>
+        <p class="nav-tooltip">Tags</p>
+      </div>
+    </li>
+    <li class="sidenavButton" id="matchButton" onclick="loadPage('matches.html',this.id)">
+      <div class="nav-container">
+      <span>
+                <img alt="match icon" class="sidenavIcon" src="../../assets/images/match.svg">
+            </span>
+        <p class="nav-tooltip">Matches</p>
+      </div>
+    </li>
+    <li class="sidenavButton" id="blackListButton" onclick="loadPage('blackList.html',this.id)">
+      <div class="nav-container">
+<span>
+                <img alt="blackList icon" class="sidenavIcon" src="../../assets/images/blackList.svg">
+            </span>
+        <p class="nav-tooltip">Blacklist</p>
+      </div>
+    </li>
+    <li class="sidenavButton" id="filesButton" onclick="loadPage('files.html',this.id)">
+      <div class="nav-container">
+<span>
+        <img alt="files icon" class="sidenavIcon" src="../../assets/images/files.svg">
+        </span>
+        <p class="nav-tooltip">Dateien</p>
+      </div>
+    </li>
+    <li class="sidenavButton" id="defaultQuestionButton" onclick="loadPage('defaultQuestion.html',this.id)">
+      <div class="nav-container">
+<span>
+        <img alt="question icon" class="sidenavIcon" src="../../assets/images/question.svg">
+        </span>
+        <p class="nav-tooltip">Fragen</p>
+      </div>
+    </li>
+    <li class="sidenavButton" id="settingsButton" onclick="loadPage('settings.jsp',this.id)">
+      <div class="nav-container">
+<span>
+                <img alt="settings icon" class="sidenavIcon" src="../../assets/images/settings.svg">
+            </span>
+        <p class="nav-tooltip">Einstellungen</p>
+      </div>
+    </li>
+    <li class="sidenavButton" id="help">
+      <a href="https://ubs-pof-chatbot.github.io/Docs/" style="text-decoration: none" target="_blank">
+        <div class="nav-container">
+<span>
+                <img alt="Logout icon" class="sidenavIcon" src="../../assets/images/help.svg">
+            </span>
+          <p class="nav-tooltip">Dokumentation</p>
+        </div>
+      </a>
+    </li>
+    <li class="sidenavButton" id="logoutButton" onclick="logout(new URLSearchParams(window.location.search), false)">
+      <div class="nav-container">
+<span>
+                <img alt="Logout icon" class="sidenavIcon" src="../../assets/images/logoutButton.svg">
+            </span>
+        <p class="nav-tooltip">Ausloggen</p>
+      </div>
+    </li>
+  </ul>
+
+</div>

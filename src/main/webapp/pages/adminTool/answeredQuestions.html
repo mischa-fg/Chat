@@ -1,0 +1,74 @@
+<div id="answeredQuestionsContent">
+  <nav class="topNav">
+    <ul class="topNavUl">
+      <li class="topNavLi" onclick="loadPage('defaultQuestion.html', 'defaultQuestionButton')">
+        Vorgeschlagene
+        Fragen
+      </li>
+      <li class="topNavLi active">Beantwortete Fragen</li>
+      <li class="topNavLi" onclick="loadPage('unansweredQuestions.html', 'defaultQuestionButton')">
+        Unbeantwortete
+        Fragen
+      </li>
+    </ul>
+  </nav>
+
+  <h1>Beantwortete Fragen</h1>
+
+  <div class="timeRangeButtonsContainer">
+    <div class="timeRangeButton active"
+         onclick="loadStuffAnsweredQuestions('hour', 'loaderAnimationContainer', this)">
+      <span>Diese Stunde</span>
+    </div>
+
+    <div class="timeRangeButton"
+         onclick="loadStuffAnsweredQuestions('day', 'loaderAnimationContainer', this)">
+      <span>Heute</span>
+    </div>
+
+    <div class="timeRangeButton"
+         onclick="loadStuffAnsweredQuestions('week', 'loaderAnimationContainer', this)">
+      <span>Diese Woche</span>
+    </div>
+
+    <div class="timeRangeButton"
+         onclick="loadStuffAnsweredQuestions('month', 'loaderAnimationContainer', this)">
+      <span>Diesen Monat</span>
+    </div>
+
+    <div class="timeRangeButton"
+         onclick="loadStuffAnsweredQuestions('year', 'loaderAnimationContainer', this)">
+      <span>Dieses Jahr</span>
+    </div>
+
+    <div class="timeRangeButton"
+         onclick="loadStuffAnsweredQuestions('all', 'loaderAnimationContainer', this)">
+      <span>Alle</span>
+    </div>
+
+    <div class="timeRangeButton"
+         onclick="loadStuffAnsweredQuestions('last', 'loaderAnimationContainer', this)">
+      <span>Seit letztem login</span>
+    </div>
+  </div>
+
+  <div id="loaderAnimationContainer"></div>
+
+  <table id="allAnsweredQuestionTable">
+    <thead>
+    <tr>
+      <th>Frage</th>
+      <th>Aufrufe</th>
+      <th>Upvotes</th>
+      <th>Downvotes</th>
+      <th>Löschen</th>
+    </tr>
+    </thead>
+    <tbody id="allAnsweredQuestionBody">
+    </tbody>
+  </table>
+</div>
+<script src="../../assets/js/adminTools/answeredQuestionPage.js"></script>
+<script>
+    loadStuffAnsweredQuestions("now", "loaderAnimationContainer", null, true);
+</script>

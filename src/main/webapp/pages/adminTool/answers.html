@@ -1,0 +1,66 @@
+<div id="answersContent">
+    <h1>Antworten</h1>
+
+    <div id="sortNav">
+        <!--"name"-->
+        <button class="desc button" id="sortByName" onclick="sortAnswers('title')">Name</button>
+        <!--"usefulness"-->
+        <button class="desc button" id="sortByUsefulness" onclick="sortAnswers('usefulness')">Bewertung</button>
+        <!--views-->
+        <button class="desc button" id="sortByViews" onclick="sortAnswers('views')">Aufrufe</button>
+
+        <button class="button right" id="addAnswerButton"
+                onclick="loadPage('answersDetails.html','answersButton',false,null,true)">
+            Antwort hinzufügen
+        </button>
+
+
+        <select aria-label="Antwort Typ" class="form-select mb-3" id="sortByType" name="answerTypes"
+                onchange="sortAnswersType(this)">
+            <option value="0">Alle</option>
+        </select>
+
+        <!--        <button id="sortByNoTag" class="desc button" onclick="sortAnswersNoTag('true')">No Tags</button>-->
+        <div class="mb-3 flex">
+            <div>
+                <label> Antworten ohne Tags
+                    <input class="desc button" id="sortByNoTag" onclick="sortAnswersNoTag(true)"
+                           type="checkbox"></label>
+            </div>
+
+            <div class="right-flex-item">
+                <span>Bewertung filtern:</span>
+                <label for="sortByRange"></label>
+                <input class="desc button" id="sortByRange" maxlength="100" min="0" oninput="sortAnswersRange()"
+                       step="1" type="range" value="0">
+                <p id="labelSort">0</p>
+                <button class="desc button margin-0" id="sortByUPDOWN" onclick="sortAnswersRangeUPDOWN(true)"
+                        value="True">Darüber
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <label class="hidden" for="answerTitle">Suche</label>
+    <div class="input-group mb-3">
+        <input class="form-control" id="answerTitle" name="aTitle" oninput="search(this.value)" placeholder="Suche"
+               type="text">
+    </div>
+
+    <div class="lds-roller" id="contentLoaderAnimation">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div id="allAnswersContainer"></div>
+</div>
+<script src="../../assets/js/adminTools/answerPage.js"></script>
+<script>
+    loadAnswers(loadedTagsPerAnswer);
+</script>

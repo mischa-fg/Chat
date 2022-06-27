@@ -1,0 +1,53 @@
+<div id="tagsContent">
+  <h1>Tags</h1>
+
+  <!--"name"-->
+  <div class="flex">
+    <button class="desc button" id="sortByName" onclick="sortTags('title')">Name</button>
+    <!--"usefulness"-->
+    <button class="desc button" id="sortByUsefulness" onclick="sortTags('usefulness')">Bewertung</button>
+    <!--"usage"-->
+    <button class="desc button" id="sortByUsage" onclick="sortTags('usaage')">Verwendung</button>
+
+    <button class="button right-flex-item" id="addTagButton"
+            onclick="loadPage('tagsDetails.html','tagButton',false,null,true)">Tag
+      hinzufügen
+    </button>
+  </div>
+
+  <label class="hidden" for="tagSearch">Suche</label>
+  <div class="input-group mb-3">
+    <input class="form-control" id="tagSearch" oninput="tagSearch(this.value)" placeholder="Suche" type="text">
+  </div>
+
+  <table id="allTagsTable">
+    <thead>
+    <tr>
+      <th>Tag</th>
+      <th>Verwendungen</th>
+      <th>Anz. Vorkommen</th>
+      <th>Upvotes</th>
+      <th>Downvotes</th>
+      <th>Bewertung</th>
+    </tr>
+    </thead>
+    <tbody id="allTagsTableBody">
+
+    </tbody>
+  </table>
+
+  <div class="lds-roller" id="contentLoaderAnimation">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+<script src="../../assets/js/adminTools/tagsPage.js"></script>
+<script>
+    loadTags();
+</script>

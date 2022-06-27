@@ -1,0 +1,488 @@
+@use "utilities/_ubscolors";
+@use "utilities/_variables";
+
+* {
+  font-family: variables.$roboto;
+}
+
+label {
+  display: none; // hide labels
+}
+
+// Scrollbar
+* {
+  scrollbar-width: thin;
+  scrollbar-color: ubscolors.$smoke transparent;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: white;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: ubscolors.$smoke;
+    border-radius: 6px;
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+}
+
+/* time range buttons */
+.timeRangeButtonsContainer {
+  display: flex;
+
+  .timeRangeButton {
+    @include variables.subnav-element;
+  }
+}
+
+/* the top navigation */
+.topNav {
+  .topNavUl {
+    list-style-type: none;
+    display: flex;
+  }
+
+  .topNavLi.active {
+    background-color: ubscolors.$stone;
+  }
+
+  .topNavLi:hover {
+    background-color: ubscolors.$smoke;
+  }
+
+  .topNavLi {
+    @include variables.subnav-element;
+  }
+}
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%;
+  /* 100% Full-height */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  /* Stay at the top */
+  left: 0;
+  background-color: ubscolors.$carbon;
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  width: 100px;
+  height: 100px;
+  /* TODO change value */
+  text-decoration: none;
+  font-size: 25px;
+  color: ubscolors.$smoke;
+  transition: 0.3s;
+}
+
+.sidenav ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.sidenav span {
+  cursor: pointer;
+}
+
+#mySidenavUL li {
+  border-bottom: 2px solid ubscolors.$black;
+}
+
+/* When you mouse over the navigation links, change their color */
+//.sidenav span:hover {
+//  background-color: ubscolors.$smoke;
+//}
+//
+.sidenavButton.active {
+  background-color: ubscolors.$stone;
+}
+
+.sidenavIcon {
+  width: 50px;
+  height: auto;
+  display: block;
+  margin: auto;
+  bottom: 25%;
+  position: absolute;
+  left: 25%;
+}
+
+.single-tag.small {
+  margin: 3px;
+  padding: 5px;
+  width: fit-content;
+  display: inline-block;
+  border: 1px solid;
+}
+
+.single-tag.big span.tagName {
+  font-size: 20px;
+  margin: 3px;
+}
+
+.single-tag.big {
+  cursor: pointer;
+}
+
+.tag i {
+  font-size: 16px;
+  color: #666;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.tagDetails-container input {
+  padding: 5px;
+  font-size: 16px;
+  border: 0;
+  outline: none;
+  color: #333;
+  flex: 1;
+}
+
+.tagDetails-container {
+  //border: 2px solid #ccc;
+  //border-radius: 3px;
+  //background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: 6px;
+  overflow-x: auto;
+
+  .tag {
+    height: 30px;
+    margin: 5px;
+    padding: 5px 6px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    background: #e9ecef;
+    display: flex;
+    align-items: center;
+    color: #333;
+    cursor: default;
+    width: max-content;
+  }
+}
+
+#tag-container-container {
+  display: flex !important;
+}
+
+#allTagsTable, #allBlackListedTable, #allMatchesTable {
+  margin: 3px;
+  padding: 5px;
+  width: 100%;
+}
+
+.id-hidden {
+  display: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.single-answer {
+  font-size: 28px;
+  width: fit-content;
+  display: inline-block;
+}
+
+.answer-container {
+  margin: 10px;
+  padding: 10px;
+  border: 3px solid ubscolors.$black;
+  cursor: pointer;
+}
+
+/* Loading animation */
+.lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: ubscolors.$black;
+  margin: -4px 0 0 -4px;
+}
+
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+//for Settings
+.buttonSubmit {
+  margin-top: 0.5em;
+  background-color: ubscolors.$black !important;
+  color: ubscolors.$white !important;
+}
+
+div .passwordSettings {
+  width: 440px;
+  height: 30px;
+  margin-bottom: 2.5rem !important;
+}
+
+#notSame {
+  color: ubscolors.$ubsred;
+}
+
+// File Page
+@mixin gridMq($min-width: -1, $max-width: -1, $items) {
+  @if $min-width != -1 and $max-width == -1 {
+    @media (min-width: $min-width) {
+      grid-template-columns: repeat($items, 100% / $items);
+    }
+  } @else if $min-width == -1 and $max-width != -1 {
+    @media (max-width: $max-width) {
+      grid-template-columns: repeat($items, 100% / $items);
+    }
+  } @else {
+    @media (min-width: $min-width) and (max-width: $max-width) {
+      grid-template-columns: repeat($items, 100% / $items);
+    }
+  }
+
+}
+
+#filesContent {
+  #fileContainer {
+    display: grid;
+    @include gridMq($min-width: 1200px, $items: 6);
+    @include gridMq($min-width: 992px, $max-width: 1199px, $items: 4);
+    @include gridMq($min-width: 0px, $max-width: 991px, $items: 3);
+    grid-auto-rows: 1fr;
+
+    .file {
+      &__cell {
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      &__img {
+
+      }
+
+      &__title {
+        padding-top: 1.5em;
+        text-align: center;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+        margin-bottom: 0;
+      }
+
+      &__anchor {
+        text-decoration: none;
+        margin-bottom: 1rem;
+        width: 100%;
+      }
+
+      &__delete {
+        margin-top: auto;
+      }
+    }
+  }
+
+  #noFiles {
+    width: calc(100% - 100px);
+  }
+
+  #addFile {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+
+    #fileInput {
+      display: none;
+    }
+
+    #fileInputContainer {
+      margin: 0;
+
+      * {
+        width: 100%;
+      }
+    }
+
+    #submitContainer {
+      margin: 0;
+
+      * {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.successMessage {
+  @include variables.message;
+  background: ubscolors.$lemongrass;
+}
+
+.failMessage {
+  @include variables.message;
+  background: ubscolors.$cinnamon;
+}
+
+
+@keyframes slideIn {
+  0% {
+    bottom: -100px;
+  }
+  100% {
+    bottom: 0;
+    position: fixed;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    bottom: 0;
+    //position: absolute;
+  }
+  100% {
+    bottom: - 100px;
+  }
+}
+
+#answersDetailsContent {
+  position: relative;
+}
+
+#suggestionTable {
+  width: 100%;
+}
+
+.single-defaultQuestion.big {
+  cursor: pointer;
+}
+
+.changePassword {
+  margin-bottom: 4em;
+}
+
+.copyTextIcon {
+  height: 1em;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+}
+
+#userListContainer {
+  margin-top: 64px;
+}
+
+#labelSort {
+  display: inline-block;
+  padding-left: 2px;
+}

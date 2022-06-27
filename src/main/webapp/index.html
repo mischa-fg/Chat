@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>Chatbot</title>
+  <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="./assets/css/chatbotStyles.css" rel="stylesheet">
+  <link href="./assets/css/generalStyles.css" rel="stylesheet">
+  <link href="./assets/images/chatbotImage.png" rel="icon" sizes="16x16" type="image/png">
+</head>
+<body onload="getTagList('userMessageInput')">
+<header>
+
+</header>
+<main>
+  <div class="container">
+    <div class="row">
+      <div id="chatbotHeader" class="col-sm-6">
+        <img class="botProfileImage" src="./assets/images/chatbotImage.png" alt="ChatbotImage" width="50" height="50">
+        <h1 id="botName">STIMA</h1>
+      </div>
+      <div id="downloadButtonDiv" class="col-sm-6">
+        <a href="" target="_blank" id="downloadButton">
+          <button>↓</button>
+        </a>
+      </div>
+    </div>
+
+    <div id="chatbotArea">
+      <div id="message-area">
+        <!-- All messages will go here -->
+      </div>
+
+      <div id="messageLoading" style="display: none;"> <!-- The "waiting for response" image sits here -->
+        <img alt="ChatbotImage" class="botProfileImage" height="50" src="./assets/images/chatbotImage.png" width="50">
+        <img alt="Message Loading image" height="48" src="./assets/images/loading-marc.gif" width="100">
+      </div>
+    </div>
+    <div id="inputWrapper">
+      <div id="bottom">
+        <label for="userMessageInput"></label><input autocomplete="off" autofocus class="form-control"
+                                                     id="userMessageInput"
+                                                     type="text">
+        <a onClick="sendMessage();"><img alt="send icon" id="sendMessageButton" src="assets/images/send_icon.png"></a>
+        <!-- NOTE: Onclick call the function in the script sendMessage.js -->
+      </div>
+      <table class="table table-info" id="suggestionTable">
+        <tbody id="suggestions"></tbody>
+      </table>
+      <div class="mb-3">
+        <small class="form-text text-muted">0 Zeichen übrig</small>
+      </div>
+    </div>
+  </div>
+</main>
+<footer>
+
+</footer>
+
+<script>
+    const inp = document.getElementById('userMessageInput');
+    inp.addEventListener('input', () => {
+        getSuggestions(inp.id)
+    })
+</script>
+
+<!-- NOTE: our scripts -->
+<script src="./assets/js/utilities/tags/tagListInterface.js" type="text/javascript"></script>
+<script src="./assets/js/utilities/tags/tagSuggestions.js" type="text/javascript"></script>
+<script src="./assets/js/utilities/variables.js" type="text/javascript"></script>
+<script src="./assets/js/utilities/prepareString.js" type="text/javascript"></script>
+<script src="./assets/js/utilities/charcounter.js" type="text/javascript"></script>
+<script src="./assets/js/chatbot.js" type="text/javascript"></script>
+<!-- NOTE: bootstrap -->
+<script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,496 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+label {
+  display: none;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #919191 transparent;
+}
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: white;
+}
+*::-webkit-scrollbar-thumb {
+  background: #919191;
+  border-radius: 6px;
+}
+*::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* time range buttons */
+.timeRangeButtonsContainer {
+  display: flex;
+}
+.timeRangeButtonsContainer .timeRangeButton {
+  cursor: pointer;
+  margin: 10px;
+  background: #646464;
+  border: 2px #000000 solid;
+  border-radius: 0.5em;
+  color: white;
+  padding: 0.5em;
+}
+.timeRangeButtonsContainer .timeRangeButton:hover {
+  background-color: #919191;
+}
+.timeRangeButtonsContainer .timeRangeButton.active {
+  background-color: #BEBEBE;
+  color: #000000;
+}
+
+/* the top navigation */
+.topNav .topNavUl {
+  list-style-type: none;
+  display: flex;
+}
+.topNav .topNavLi.active {
+  background-color: #BEBEBE;
+}
+.topNav .topNavLi:hover {
+  background-color: #919191;
+}
+.topNav .topNavLi {
+  cursor: pointer;
+  margin: 10px;
+  background: #646464;
+  border: 2px #000000 solid;
+  border-radius: 0.5em;
+  color: white;
+  padding: 0.5em;
+}
+.topNav .topNavLi:hover {
+  background-color: #919191;
+}
+.topNav .topNavLi.active {
+  background-color: #BEBEBE;
+  color: #000000;
+}
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%;
+  /* 100% Full-height */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  /* Stay at the top */
+  left: 0;
+  background-color: #646464;
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  width: 100px;
+  height: 100px;
+  /* TODO change value */
+  text-decoration: none;
+  font-size: 25px;
+  color: #919191;
+  transition: 0.3s;
+}
+
+.sidenav ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.sidenav span {
+  cursor: pointer;
+}
+
+#mySidenavUL li {
+  border-bottom: 2px solid #000000;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenavButton.active {
+  background-color: #BEBEBE;
+}
+
+.sidenavIcon {
+  width: 50px;
+  height: auto;
+  display: block;
+  margin: auto;
+  bottom: 25%;
+  position: absolute;
+  left: 25%;
+}
+
+.single-tag.small {
+  margin: 3px;
+  padding: 5px;
+  width: fit-content;
+  display: inline-block;
+  border: 1px solid;
+}
+
+.single-tag.big span.tagName {
+  font-size: 20px;
+  margin: 3px;
+}
+
+.single-tag.big {
+  cursor: pointer;
+}
+
+.tag i {
+  font-size: 16px;
+  color: #666;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.tagDetails-container input {
+  padding: 5px;
+  font-size: 16px;
+  border: 0;
+  outline: none;
+  color: #333;
+  flex: 1;
+}
+
+.tagDetails-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: 6px;
+  overflow-x: auto;
+}
+.tagDetails-container .tag {
+  height: 30px;
+  margin: 5px;
+  padding: 5px 6px;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  background: #e9ecef;
+  display: flex;
+  align-items: center;
+  color: #333;
+  cursor: default;
+  width: max-content;
+}
+
+#tag-container-container {
+  display: flex !important;
+}
+
+#allTagsTable, #allBlackListedTable, #allMatchesTable {
+  margin: 3px;
+  padding: 5px;
+  width: 100%;
+}
+
+.id-hidden {
+  display: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.single-answer {
+  font-size: 28px;
+  width: fit-content;
+  display: inline-block;
+}
+
+.answer-container {
+  margin: 10px;
+  padding: 10px;
+  border: 3px solid #000000;
+  cursor: pointer;
+}
+
+/* Loading animation */
+.lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #000000;
+  margin: -4px 0 0 -4px;
+}
+
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.buttonSubmit {
+  margin-top: 0.5em;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+div .passwordSettings {
+  width: 440px;
+  height: 30px;
+  margin-bottom: 2.5rem !important;
+}
+
+#notSame {
+  color: #E60000;
+}
+
+#filesContent #fileContainer {
+  display: grid;
+  grid-auto-rows: 1fr;
+}
+@media (min-width: 1200px) {
+  #filesContent #fileContainer {
+    grid-template-columns: repeat(6, 16.6666666667%);
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  #filesContent #fileContainer {
+    grid-template-columns: repeat(4, 25%);
+  }
+}
+@media (min-width: 0px) and (max-width: 991px) {
+  #filesContent #fileContainer {
+    grid-template-columns: repeat(3, 33.3333333333%);
+  }
+}
+#filesContent #fileContainer .file__cell {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#filesContent #fileContainer .file__title {
+  padding-top: 1.5em;
+  text-align: center;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  margin-bottom: 0;
+}
+#filesContent #fileContainer .file__anchor {
+  text-decoration: none;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+#filesContent #fileContainer .file__delete {
+  margin-top: auto;
+}
+#filesContent #noFiles {
+  width: calc(100% - 100px);
+}
+#filesContent #addFile {
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+#filesContent #addFile #fileInput {
+  display: none;
+}
+#filesContent #addFile #fileInputContainer {
+  margin: 0;
+}
+#filesContent #addFile #fileInputContainer * {
+  width: 100%;
+}
+#filesContent #addFile #submitContainer {
+  margin: 0;
+}
+#filesContent #addFile #submitContainer * {
+  width: 100%;
+}
+
+.successMessage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: slideIn 1s ease-in-out;
+  position: fixed;
+  width: calc(100% - 100px);
+  height: 100px;
+  right: 0;
+  bottom: 0;
+  background: #DEDFB3;
+}
+.successMessage .image {
+  width: 50px;
+  aspect-ratio: 1/1;
+  margin-right: 2em;
+}
+.successMessage .message {
+  margin: 0;
+}
+
+.failMessage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: slideIn 1s ease-in-out;
+  position: fixed;
+  width: calc(100% - 100px);
+  height: 100px;
+  right: 0;
+  bottom: 0;
+  background: #D4AD9C;
+}
+.failMessage .image {
+  width: 50px;
+  aspect-ratio: 1/1;
+  margin-right: 2em;
+}
+.failMessage .message {
+  margin: 0;
+}
+
+@keyframes slideIn {
+  0% {
+    bottom: -100px;
+  }
+  100% {
+    bottom: 0;
+    position: fixed;
+  }
+}
+@keyframes slideOut {
+  0% {
+    bottom: 0;
+  }
+  100% {
+    bottom: -100px;
+  }
+}
+#answersDetailsContent {
+  position: relative;
+}
+
+#suggestionTable {
+  width: 100%;
+}
+
+.single-defaultQuestion.big {
+  cursor: pointer;
+}
+
+.changePassword {
+  margin-bottom: 4em;
+}
+
+.copyTextIcon {
+  height: 1em;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+}
+
+#userListContainer {
+  margin-top: 64px;
+}
+
+#labelSort {
+  display: inline-block;
+  padding-left: 2px;
+}
+
+/*# sourceMappingURL=adminToolStyles.css.map */

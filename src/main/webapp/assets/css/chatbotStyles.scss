@@ -1,0 +1,214 @@
+@use "utilities/_ubscolors";
+@use "utilities/_variables";
+
+body {
+  * {
+    h1 {
+      margin: 0 0 0 0.25em; /* NOTE: Keep a distance to image*/
+    }
+
+    .hidden {
+      display: none !important;
+    }
+  }
+
+  main {
+    #chatbotHeader {
+      .botProfileImage {
+        border-radius: 50%;
+        float: left;
+      }
+
+      /* NOTE: The Title of the bot */
+      #botName {
+        padding-top: 5px;
+      }
+    }
+
+    #downloadButtonDiv {
+      text-align: right;
+
+      * {
+        background: none;
+        border: none;
+        font-size: 1.5em;
+      }
+    }
+
+
+    /* NOTE: The div where all the messages will go */
+    #chatbotArea {
+      height: 65vh;
+      overflow: auto; /* NOTE: As soon as needed, show a scrollbar */
+      overflow-x: hidden;
+      border: 1px solid;
+      margin-top: 10px;
+
+      #message-area {
+        #firstMessageContainer {
+          float: left;
+        }
+
+        [id^="messageBox-"] {
+          /* NOTE: Feedback icons */
+          /* feed back icons overall */
+          .feedbackImage {
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+          }
+
+          .attachment-image {
+            @include variables.file-attachment();
+          }
+
+          .attachment-container {
+            @include variables.file-attachment();
+            background: ubscolors.$stone; // TODO: maybe change color
+            p {
+              margin: 0.25em;
+            }
+
+            embed {
+              width: calc(100% - 1em);
+              margin: 0.5em;
+              height: 50vh;
+            }
+          }
+        }
+
+        .messageContainer {
+          border: 1px solid; /* NOTE: add a small and thin border */
+          padding: 10px;
+          min-height: 50px;
+          vertical-align: middle;
+
+          // Messages from the Bot
+          &.incoming {
+            text-align: left;
+            background-color: ubscolors.$terracotta;
+            color: ubscolors.$white;
+
+            &.firstMessage {
+              margin: 5px 0 0 50px;
+              /* NOTE: Round Corners */
+              border-radius: 0 10px 10px 10px; /* top left corner normal corner */
+
+              &.chatbotPBMessage {
+                width: 30px;
+                height: 30px;
+                mix-blend-mode: multiply; /* this is needed because the image isn't transparent. TODO: remove once we have a transparent image! */
+                margin-right: 10px;
+              }
+            }
+
+            &.notFirstMessage {
+              margin: 0 0 0 50px; /* Distance to the left */
+              /* NOTE: Round Corners */
+              border-radius: 10px 10px 10px 10px;
+            }
+          }
+
+          /* NOTE: Our messages */
+          &.outgoing {
+            text-align: right;
+            background-color: ubscolors.$sand;
+            color: white;
+
+            &.firstMessage {
+              margin: 5px 5px 0 0;
+              /* NOTE: Round Corners */
+              border-radius: 10px 0 10px 10px; /* top right corner normal corner */
+            }
+
+            &.notFirstMessage {
+              margin: 0 10px 0 0; /* Distance to the right */
+
+              /* NOTE: Round Corners */
+              border-radius: 10px 10px 10px 10px;
+            }
+
+            .questionbutton {
+              background-color: ubscolors.$sand;
+              padding: 5px;
+              margin: 1px;
+              border: 1.5px solid white;
+              border-radius: 15px;
+              width: 100%;
+              text-align: center;
+              color: white;
+              white-space: normal;
+            }
+          }
+        }
+      }
+    }
+
+    #inputWrapper {
+      /* NOTE: The text input and send button */
+      #bottom {
+        display: flex; /*NOTE: Keep the user Input and button in the same line */
+
+        #userMessageInput {
+          margin: 5px 0 0 0; /* NOTE: Keep a distance to the top */
+          border-radius: 20px 20px 20px 20px;
+        }
+
+        #sendMessageButton {
+          margin: 5px 0 0 -50px;
+          border-color: inherit;
+          height: 40px;
+          transform: rotate(30deg);
+        }
+      }
+    }
+  }
+
+}
+
+a {
+  color: white;
+
+  &:hover {
+    color: ubscolors.$mouse;
+  }
+}
+
+/* CSS Transitions */
+/* Grow */
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/* Hover effect */
+.feedbackImage:hover {
+  /*width: 35px;
+  height: 35px;*/
+}
+
+.prevFeedback {
+  * {
+    cursor: default !important;
+  }
+}
+
+#feedBackContainer, .prevFeedback {
+  margin-left: 50px;
+}
+
+#suggestionTable {
+  width: 80%;
+}

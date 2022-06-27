@@ -1,0 +1,21 @@
+<div class="blacklistDetailsContainer">
+    <h1>Blacklists Eintrag bearbeiten</h1>
+
+  <label class="hidden" for="blacklistEntryContent">Antwort Titel</label>
+  <div class="input-group">
+    <span class="input-group-text">Inhalt</span>
+    <input class="form-control" disabled id="blacklistEntryContent" name="content" placeholder="Inhalt" type="text">
+  </div>
+  <div class="mb-3">
+    <small class="form-text text-muted">0 Zeichen übrig</small>
+  </div>
+
+  <input id="blacklistEntryId" name="entryId" type="hidden" value="">
+
+  <input class="form-control" disabled id="blacklistSubmitButton" type="button" value="">
+</div>
+
+<script src="../../assets/js/adminTools/blacklistDetailsPage.js"></script>
+<script>
+    initPage();
+</script>

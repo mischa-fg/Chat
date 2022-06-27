@@ -1,0 +1,38 @@
+<div id="filesContent">
+    <h1>Dateien</h1>
+    <div id="addFile">
+        <h2>Datei Hochladen</h2>
+        <form id="fileAddForm" enctype="multipart/form-data" method="post" accept-charset="UTF-8">
+            <div class="form-group">
+                <p id="uploadStatus"></p>
+                <div class="row">
+                    <div class="col-8" id="fileInputContainer">
+                        <label for="fileInput" id="fileInputLabel">
+                            <button type="button" class="btn btn-outline-dark" id="fileSelectButton"
+                                    onclick="document.getElementById('fileInputLabel').click()">Datei auswählen
+                            </button>
+                        </label>
+                        <input type="file" name="file" id="fileInput" oninput="setFileText(this)"
+                               class="form-control-file" required>
+                    </div>
+                    <div class="col-4" id="submitContainer">
+                        <button type="button" class="btn btn-primary" onclick="submitFileForm()">Absenden</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <h3 id="noFiles"></h3>
+    <div id="contentLoaderAnimation" class="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div id="fileContainer"></div>
+</div>
+<script src="../../assets/js/adminTools/filePage.js"></script>

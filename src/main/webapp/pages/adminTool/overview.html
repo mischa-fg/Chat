@@ -1,0 +1,93 @@
+<div id="overviewContent">
+    <h1>Übersicht</h1>
+
+    <h2>Gesendete Antworten</h2>
+
+    <div class="timeRangeButtonsContainer" id="sentAnswersTime">
+        <div class="timeRangeButton active"
+             onclick="loadSentAnswers('day', this)">
+            <span>Heute</span>
+        </div>
+
+        <div class="timeRangeButton"
+             onclick="loadSentAnswers('week', this)">
+            <span>Diese Woche</span>
+        </div>
+
+        <div class="timeRangeButton"
+             onclick="loadSentAnswers('month', this)">
+            <span>Diesen Monat</span>
+        </div>
+
+        <div class="timeRangeButton"
+             onclick="loadSentAnswers('year', this)">
+            <span>Dieses Jahr</span>
+        </div>
+
+        <div class="timeRangeButton"
+             onclick="loadSentAnswers('all', this)">
+            <span>Alle Jahre</span>
+        </div>
+
+        <div class="timeRangeButton"
+             onclick="loadSentAnswers('last', this)">
+            <span>Seit letztem login</span>
+        </div>
+    </div>
+
+    <div id="loaderAnimationContainer1"></div>
+
+    <span id="totalAnswersInThisTime"></span>
+    <div style="position: relative; height:400px; width:800px">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <h2>Beantwortete vs unbeantwortete Fragen</h2>
+
+    <div class="timeRangeButtonsContainer" id="answeredVsUnansweredTime">
+        <div class="timeRangeButton active"
+             onclick="loadAnsweredVsUnanswered('day', this)">
+            <span>Heute</span>
+        </div>
+
+        <div class="timeRangeButton"
+             onclick="loadAnsweredVsUnanswered('week', this)">
+            <span>Diese Woche</span>
+        </div>
+
+        <div class="timeRangeButton"
+             onclick="loadAnsweredVsUnanswered('month', this)">
+            <span>Diesen Monat</span>
+        </div>
+
+        <div class="timeRangeButton"
+             onclick="loadAnsweredVsUnanswered('year', this)">
+            <span>Dieses Jahr</span>
+        </div>
+
+        <div class="timeRangeButton"
+             onclick="loadAnsweredVsUnanswered('all', this)">
+            <span>Alle Jahre</span>
+        </div>
+
+        <div class="timeRangeButton"
+             onclick="loadAnsweredVsUnanswered('last', this)">
+            <span>Seit letztem login</span>
+        </div>
+    </div>
+
+    <div id="loaderAnimationContainer2"></div>
+
+    <span id="totalAnsweredInThisTime"></span>
+    <br>
+    <span id="totalUnansweredInThisTime"></span>
+
+    <div style="position: relative; height:400px; width:800px">
+        <canvas id="chartAnsweredToUnanswered"></canvas>
+    </div>
+</div>
+
+<script src="../../assets/js/adminTools/overview.js"></script>
+<script>
+    loadEverything('day', null, true);
+</script>

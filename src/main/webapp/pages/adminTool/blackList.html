@@ -1,0 +1,46 @@
+<div class="blackListedContent">
+    <h1>Blacklists</h1>
+
+    <div id="sortNav">
+        <!--"name"-->
+        <button id="sortByName" class="desc button" onclick="sortBlackList()">Name</button>
+
+        <button id="addBlacklistEntry" class="button right" onclick="loadPage('blacklistDetails.html', 'blackListButton')">
+            Blacklist Eintrag Hinzufügen
+        </button>
+    </div>
+
+    <label for="blackListSearch" class="hidden">Suche</label>
+    <div class="input-group mb-3">
+        <input type="text" id="blackListSearch" class="form-control" placeholder="Suche" oninput="blackListSearch(this.value)">
+    </div>
+
+    <table id="allBlackListedTable">
+        <thead>
+        <tr>
+            <th>Wort</th>
+            <th>Verwendungen</th>
+            <th>Löschen</th>
+        </tr>
+        </thead>
+        <tbody id="allBlackListedTableBody">
+
+        </tbody>
+    </table>
+
+    <div id="contentLoaderAnimation" class="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+
+<script src="../../assets/js/adminTools/blackListPage.js"></script>
+<script>
+    loadBlackList();
+</script>

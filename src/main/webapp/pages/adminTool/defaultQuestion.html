@@ -1,0 +1,68 @@
+<div id="defaultQuestionContent">
+    <nav class="topNav">
+        <ul class="topNavUl">
+            <li class="topNavLi active">Vorgeschlagene Fragen</li>
+            <li class="topNavLi" onclick="loadPage('answeredQuestions.html', 'defaultQuestionButton')">Beantwortete
+                Fragen
+            </li>
+            <li class="topNavLi" onclick="loadPage('unansweredQuestions.html', 'defaultQuestionButton')">Unbeantwortete
+                Fragen
+            </li>
+        </ul>
+    </nav>
+
+    <h1>Fragen</h1>
+
+    <div id="contentLoaderAnimation" class="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <h2>Aktuelle vorschläge</h2>
+    <table id="allQuestionSuggestionsTable">
+        <thead>
+        <tr>
+            <th>Frage</th>
+            <th>Aufrufe</th>
+            <th>Upvotes</th>
+            <th>Downvotes</th>
+            <th>Löschen</th>
+        </tr>
+        </thead>
+        <tbody id="allQuestionSuggestionsBody">
+        </tbody>
+    </table>
+
+    <h2>Benutzerdefinierte Fragen</h2>
+
+    <div id="sortNav">
+        <!--"name"-->
+        <button id="sortByName" class="desc button" onclick="sortDefaultQuestion()">Name</button>
+
+        <button id="addDQuestionButton" class="button right"
+                onclick="loadPage('defaultQuestionsDetails.html','defaultQuestionButton',false,null,true)">
+            Frage hinzufügen
+        </button>
+    </div>
+
+    <table id="allDefaultQuestionTable">
+        <thead>
+        <tr>
+            <th>Frage</th>
+            <th>Löschen</th>
+        </tr>
+        </thead>
+        <tbody id="allDefaultTableBody">
+        </tbody>
+    </table>
+</div>
+<script src="../../assets/js/adminTools/defaultQuestionPage.js"></script>
+<script>
+    loadStuff("now");
+</script>

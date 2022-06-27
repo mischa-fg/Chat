@@ -1,0 +1,35 @@
+<div id="answersDetailsStatisticPageContent">
+
+    <nav class="topNav">
+        <ul class="topNavUl">
+            <li class="topNavLi" onclick="loadPageWithUrl('answersDetails.html', 'answersButton')">
+                Antwort bearbeiten
+            </li>
+            <li class="topNavLi active">
+                Antwort Statistiken
+            </li>
+        </ul>
+    </nav>
+
+    <div id="loaderAnimationContainer"></div>
+
+    <h2>Alle Fragen mit dieser Antwort</h2>
+
+    <table id="allAnsweredQuestionTable">
+        <thead>
+        <tr>
+            <th>Frage</th>
+            <th>Aufrufe</th>
+            <th>Upvotes</th>
+            <th>Downvotes</th>
+        </tr>
+        </thead>
+        <tbody id="allAnsweredQuestionBody">
+        </tbody>
+    </table>
+
+</div>
+<script src="../../assets/js/adminTools/answerDetailsStatisticPage.js"></script>
+<script>
+    loadAnsweredQuestionsOfThisAnswer("loaderAnimationContainer");
+</script>

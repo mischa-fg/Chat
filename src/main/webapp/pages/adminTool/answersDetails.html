@@ -1,0 +1,110 @@
+<div id="answersDetailsContent">
+
+  <nav class="topNav" id="topNavForEditAnswer">
+    <ul class="topNavUl">
+      <li class="topNavLi active">
+        Antwort bearbeiten
+      </li>
+      <li class="topNavLi" onclick="loadPageWithUrl('answerDetailsStatisticPage.html', 'answersButton')">
+        Antwort Statistiken
+      </li>
+    </ul>
+  </nav>
+
+  <h1 id="title">Antwort bearbeiten</h1>
+
+  <h2 id="loadingError"></h2>
+
+  <form action="#" id="answerForm">
+    <div class="form-group">
+      <label class="hidden" for="answerTitle">Antwort Titel</label>
+      <div class="input-group">
+        <span class="input-group-text">Titel</span>
+        <input class="form-control" id="answerTitle" name="aTitle" placeholder="Antwort Titel" type="text">
+      </div>
+      <div class="mb-3">
+        <small class="form-text text-muted">0 Zeichen übrig</small>
+      </div>
+
+      <label class="hidden" for="answerText">Antwort Text</label>
+      <div class="input-group">
+        <span class="input-group-text">Antwort</span>
+        <textarea class="form-control" cols="50" id="answerText" name="aText" rows="10"></textarea>
+      </div>
+      <div class="mb-3">
+        <small class="form-text text-muted">0 Zeichen übrig</small>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" id="isHiddenInput" name="isHidden" type="checkbox">
+        <label class="form-check-label mb-3" for="isHiddenInput">Versteckt</label>
+        <img alt="Light Bulb" class="info-tooltip"
+             src="../../assets/images/info.svg"
+             title="Wenn ausgewählt wird diese Antwort nicht in den Statistiken vorkommen.">
+      </div>
+      <h2>Tags Hinzufügen</h2>
+      <div class="tagDetails-container" id="tag-container-container">
+        <label class="hidden" for="tag-container-input">Tags</label>
+        <input id="tag-container-input" oninput="getSuggestions(this.id, true)" placeholder="Neuer Tag"
+               type="text">
+      </div>
+      <div class="mb-3">
+        <small class="form-text text-muted">0 Zeichen übrig</small>
+      </div>
+
+      <div class="mb-3">
+        <label for="answerTypesSelect">Antwort Typ</label>
+        <select aria-label="Antwort Typ" class="form-select" id="answerTypesSelect" name="answerTypes">
+        </select>
+      </div>
+
+      <input id="hiddenTagsInput" name="tags" type="hidden">
+      <table class="table table-info" id="suggestionTable">
+        <tbody id="suggestions"></tbody>
+      </table>
+
+      <div class="lds-roller" id="contentLoaderAnimation">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <div id="allTagsTableContent">
+
+      </div>
+
+      <h2>Dateien</h2>
+      <div class="mb-3">
+        <select aria-label="Datei Hinzufügen" class="form-select" id="fileSelector">
+          <option disabled selected style="display: none;">Datei Hinzufügen</option>
+        </select>
+      </div>
+
+      <table class="mb-5" id="fileTable">
+        <thead>
+        <tr>
+          <th>Dateiname</th>
+          <th>Entfernen</th>
+        </tr>
+        </thead>
+        <tbody id="files"></tbody>
+      </table>
+
+      <input class="form-control btn btn-secondary mb-3" id="answerFormSubmitButton" type="button" value="">
+    </div>
+  </form>
+  <button class="btn btn-danger w-100 mb-5" id="deleteAnswerButton" onclick="deleteAnswer()">Antwort löschen</button>
+</div>
+
+<script src="../../assets/js/adminTools/answersDetailsPage.js"></script>
+<script src="../../assets/js/utilities/tags/tagsInput.js"></script>
+<script src="../../assets/js/utilities/tags/tagSuggestions.js"></script>
+<script>
+    getTagList('tag-container-input', true);
+    loadAnswer();
+</script>

@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+body {
+  background-color: #BEBEBE;
+  font-family: "Roboto", sans-serif;
+}
+
+label {
+  margin-right: 1.5px;
+  float: left;
+  width: 300px;
+  padding-top: 1px;
+  text-align: left;
+}
+
+input {
+  display: block;
+  margin-bottom: 1px;
+  border: 1px solid #000;
+  padding: 0.1em;
+  width: 300px;
+}
+
+.contentBackground {
+  background-color: #ffffff;
+  width: 620px;
+  height: 626px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.content {
+  background-color: #ffffff;
+  width: 440px;
+  height: 446px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+button {
+  height: 30px;
+  width: 130px;
+  background-color: #000000;
+  border: none;
+  color: #ffffff;
+  float: right;
+  width: 40%;
+  margin-top: 5px;
+}
+
+#showpassword {
+  float: left;
+  width: 10px;
+  width: 10%;
+}
+
+#passwordtext {
+  font-size: 8px;
+  float: left;
+  width: 40%;
+  margin-top: 3px;
+}
+
+#showPasswordContainer {
+  width: 300px;
+}
+
+/*# sourceMappingURL=passwortAendernStyles.css.map */

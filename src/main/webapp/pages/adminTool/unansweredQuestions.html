@@ -1,0 +1,69 @@
+<div id="unansweredQuestionsContent">
+  <nav class="topNav">
+    <ul class="topNavUl">
+      <li class="topNavLi" onclick="loadPage('defaultQuestion.html', 'defaultQuestionButton')">Vorgeschlagene
+        Fragen
+      </li>
+      <li class="topNavLi" onclick="loadPage('answeredQuestions.html', 'defaultQuestionButton')">Beantwortete
+        Fragen
+      </li>
+      <li class="topNavLi active">Unbeantwortete Fragen</li>
+    </ul>
+  </nav>
+  <h1>Unbeantwortete Fragen</h1>
+
+  <div class="timeRangeButtonsContainer">
+    <div class="timeRangeButton active"
+         onclick="loadStuffUnansweredQuestions('hour', 'loaderAnimationContainer', this)">
+      <span>Diese Stunde</span>
+    </div>
+
+    <div class="timeRangeButton"
+         onclick="loadStuffUnansweredQuestions('day', 'loaderAnimationContainer', this)">
+      <span>Heute</span>
+    </div>
+
+    <div class="timeRangeButton"
+         onclick="loadStuffUnansweredQuestions('week', 'loaderAnimationContainer', this)">
+      <span>Diese Woche</span>
+    </div>
+
+    <div class="timeRangeButton"
+         onclick="loadStuffUnansweredQuestions('month', 'loaderAnimationContainer', this)">
+      <span>Diesen Monat</span>
+    </div>
+
+    <div class="timeRangeButton"
+         onclick="loadStuffUnansweredQuestions('year', 'loaderAnimationContainer', this)">
+      <span>Dieses Jahr</span>
+    </div>
+
+    <div class="timeRangeButton"
+         onclick="loadStuffUnansweredQuestions('all', 'loaderAnimationContainer', this)">
+      <span>Alle</span>
+    </div>
+
+    <div class="timeRangeButton"
+         onclick="loadStuffUnansweredQuestions('last', 'loaderAnimationContainer', this)">
+      <span>Seit letztem login</span>
+    </div>
+  </div>
+
+  <div id="loaderAnimationContainer"></div>
+
+  <table id="allUnansweredQuestionTable">
+    <thead>
+    <tr>
+      <th>Frage</th>
+      <th>Aufrufe</th>
+      <th>Löschen</th>
+    </tr>
+    </thead>
+    <tbody id="allUnansweredQuestionBody">
+    </tbody>
+  </table>
+</div>
+<script src="../../assets/js/adminTools/unansweredQuestionPage.js"></script>
+<script>
+    loadStuffUnansweredQuestions("now", "loaderAnimationContainer", null, true);
+</script>

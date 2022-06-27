@@ -1,0 +1,50 @@
+<div class="matchesContent">
+    <h1>Matches</h1>
+
+    <div id="sortNav">
+        <!--"name"-->
+        <button id="sortByName" class="desc button" onclick="sortMatch('title')">Names</button>
+        <!--"usefulness"-->
+        <button id="sortByUsefulness" class="desc button" onclick="sortMatch('usefulness')">Bewertung</button>
+    </div>
+
+    <label for="matchesSearch" class="hidden">Suche</label>
+    <div class="input-group mb-3">
+        <input type="text" id="matchesSearch" class="form-control" placeholder="Suche" oninput="matchesSearch(this.value)">
+    </div>
+
+    <table id="allMatchesTable">
+        <thead>
+        <tr>
+            <th>Match</th>
+            <th>Tag</th>
+            <th>Upvotes</th>
+            <th>Downvotes</th>
+            <th>Bewertung</th>
+            <th>Status</th>
+            <th>Zurücksetzen</th>
+            <th>Nicht übersetzen</th>
+            <th>Blacklisten</th>
+        </tr>
+        </thead>
+        <tbody id="allMatchesTableBody">
+
+        </tbody>
+    </table>
+
+    <div id="contentLoaderAnimation" class="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+
+<script src="../../assets/js/adminTools/matchesPage.js"></script>
+<script>
+    loadMatches();
+</script>

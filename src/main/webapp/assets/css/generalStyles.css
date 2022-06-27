@@ -1,0 +1,15 @@
+.currentSuggestion * {
+  background: #d3e2ff !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#suggestionTable {
+  margin-left: 15px;
+  cursor: pointer;
+  position: absolute;
+}
+
+/*# sourceMappingURL=generalStyles.css.map */
